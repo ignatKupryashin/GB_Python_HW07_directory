@@ -1,5 +1,6 @@
 from modules.view import view_note
 from modules.add_note import add_note
+from modules.export import export_interface
 # меню программы
 # Предлагаю реализовывать в бесконечном цикле
 # Должна поздороваться, вывести меню и принять от пользователя цифру:
@@ -33,3 +34,6 @@ def ui():
 
         if number == 2:
             add_note()
+
+        if number == 3:
+            export_interface()
