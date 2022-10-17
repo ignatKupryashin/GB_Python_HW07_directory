@@ -1,6 +1,7 @@
 from modules.export_modules.xml_generator import create_xml
 from modules.export_modules.txt_generator import create_txt
 from modules.export_modules.csv_generator import create_csv
+from modules.check_name import check_name
 
 def export_interface():
     while True:
@@ -14,7 +15,10 @@ def export_interface():
 
 
 def export(export_format):
-    filename = input("Введите имя файла: ")
+    filename = False
+    while filename == False:
+        filename = check_name(input("Введите имя файла: "))
+
     if export_format == "1":
         create_csv(filename)
         return
