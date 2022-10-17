@@ -2,7 +2,6 @@ import csv
 
 
 def create_txt(name="new_export"):
-    print("Пишу txt")
     with open('database.csv', newline='') as csvfile:
         txt = ""
         reader = csv.DictReader(csvfile)

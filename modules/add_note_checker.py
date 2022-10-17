@@ -1,4 +1,3 @@
-# Проверка на валидность ввода из add_note
 def check_tel(s):
     if s.isdigit() and len(s) == 11:
         l = [i for i in s]

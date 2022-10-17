@@ -1,17 +1,12 @@
 from modules.view import view_note
 from modules.add_note import add_note
 from modules.export import export_interface
-# меню программы
-# Предлагаю реализовывать в бесконечном цикле
-# Должна поздороваться, вывести меню и принять от пользователя цифру:
-# Если не та цифра - повторить. Если та - вызываем соответствующую функцию из соответствующего файла.
-# Пока у нас нет имён методов - оставляй поле пустым. Как будут наименования методов - заполним
-# При выборе цифры 9 - выход из программы. Попрощаться и break
+from modules.import_module import import_interface
 
 
 def ui():
-    number = None
-    while number != 9:
+    while True:
+        print("")
         print("МЕНЮ:")
         print("1: Посмотреть все записи")
         print("2: Добавить запись")
@@ -25,7 +20,7 @@ def ui():
         else:
             print("Неверный ввод, повторите попытку")
             continue
-        if number < 0 or number > 9:
+        if number not in [1, 2, 3, 4, 9]:
             print("Неверный ввод, повторите попытку")
             continue
 
@@ -37,3 +32,10 @@ def ui():
 
         if number == 3:
             export_interface()
+
+        if number == 4:
+            import_interface()
+
+        if number == 9:
+            print("Хорошего дня!")
+            return
