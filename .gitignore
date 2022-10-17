@@ -1,4 +1,5 @@
 *.DS_Store
-database.csv
+.DS_Store
+../database.csv
 ._*
 export/*
