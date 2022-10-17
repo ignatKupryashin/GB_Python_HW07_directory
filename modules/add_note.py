@@ -1,8 +1,3 @@
-# Вводные данные нужны, чтобы пользоваться методом можно было не только для пользователя,
-# но и для функции импорта
-# если == None  - запускаешь импорты. Если нет - берешь то, что ввели.
-# Далее проверяешь валидность в add_note_checker
-# **Было бы неплохо добавить ещё проверку на дублирование данных
 from modules.add_note_checker import check_tel
 import csv
 
@@ -12,7 +7,7 @@ def add_note(family=None, name=None, tel=None, discription=None):
         with open("database.csv", "a", newline="") as csvfile:
             fieldnames = ["Фамилия", "Имя", "Телефон", "Описание"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writerow({"Фамилия": {family}, "Имя": {name}, "Телефон": {tel}, "Описание": {discription}})
+            writer.writerow({"Фамилия": family, "Имя": name, "Телефон": tel, "Описание": discription})
     else:
         dict = {"Фамилия": None, "Имя": None, "Телефон": None, "Описание": None}
         n = 0

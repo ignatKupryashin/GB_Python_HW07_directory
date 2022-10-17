@@ -1,8 +1,6 @@
 import csv
 
-
 def create_xml(name="new_export"):
-    print("Пишу xml")
     xml = '<xml>\n'
     with open('database.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)

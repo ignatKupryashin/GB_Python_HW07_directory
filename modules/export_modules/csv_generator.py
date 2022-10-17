@@ -1,15 +1,4 @@
-import csv
-
-def create_xml(name="new_export"):
-    print("Пишу xml")
-    xml = '<xml>\n'
-    with open('database.csv', newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            xml += f'<Фамилия>{row["Фамилия"]}</Фамилия>\n'
-            xml += f'<Имя>{row["Имя"]}</Имя>\n'
-            xml += f'<Телефон>{row["Телефон"]}</Телефон>\n'
-            xml += f'<Описание>{row["Описание"]}</Описание>\n'
-    xml += '</xml>'
-    with open(f"export/{name}.xml", 'w') as page:
-        page.write(xml)
+def create_csv(filename="new_export"):
+    with open('database.csv', "rb") as data:
+        with open(f"export/{filename}.csv", "wb") as new_file:
+            new_file.writelines(data.readlines())
